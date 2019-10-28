@@ -2,6 +2,4 @@
 title: "Dania's Website"
 ---
 
-### I have a webpage!
-
-And I can put all kinds of stuff on it!
+<img src="IMG_4658.JPG" alt="Me">
