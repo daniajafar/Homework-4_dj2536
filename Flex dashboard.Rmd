@@ -40,10 +40,6 @@ instacart2 %>%
   layout(xaxis  = list(title = "Product", showticklabels = FALSE), 
         yaxis = list(title = "Number Ordered"), 
          title = 'The Top 10 Baking Ingredients Ordered') 
-
-
-#ggplot(aes(x = fct_reorder(product_name, n), y = n)) + 
- # geom_bar(stat="identity") + 
 ```
 
 Column {data-width=350}
