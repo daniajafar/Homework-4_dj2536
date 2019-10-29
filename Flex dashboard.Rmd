@@ -1,0 +1,71 @@
+---
+title: "Personal Site"
+author: "Dania Jafar"
+date: "10/27/2019"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+data("instacart")
+#create a table showing the 10 most popular items in the baking aisle
+instacart2 = instacart %>% 
+  select(aisle_id, aisle, product_name) %>% 
+  filter(aisle == "baking ingredients") %>% 
+count(aisle, product_name) %>% 
+group_by(aisle) %>% 
+top_n(10) 
+
+instacart2
+
+instacart2 %>% 
+  arrange(n) %>% 
+  mutate(product_name = fct_reorder(product_name, n)) %>% 
+  plot_ly(x = ~product_name , y = ~n  , color = ~product_name, type = "bar") %>%  
+  layout(xaxis  = list(title = "Product", showticklabels = FALSE), 
+        yaxis = list(title = "Number Ordered"), 
+         title = 'The Top 10 Baking Ingredients Ordered') 
+
+
+#ggplot(aes(x = fct_reorder(product_name, n), y = n)) + 
+ # geom_bar(stat="identity") + 
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
+
+
+
+```
+
+

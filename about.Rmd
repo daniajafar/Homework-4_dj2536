@@ -1,7 +1,6 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-### About this site
 
-Hi! I'm Dania Jafar and am a second year student doing my MPH in Epidemiology and Biostatistics at Columbia University. I am interested in using data-driven methods to improve the poulations health. Some of my hobbies include baking, going to the beach, and visiting parks :)
+Hi! I'm Dania and am a second year student doing my MPH in Epidemiology and Biostatistics at Columbia University. I am interested in using data-driven methods to improve population health. Some of my hobbies include baking, going to the beach, and visiting parks :)
