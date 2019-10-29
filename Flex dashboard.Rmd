@@ -33,8 +33,6 @@ count(aisle, product_name) %>%
 group_by(aisle) %>% 
 top_n(10) 
 
-instacart2
-
 instacart2 %>% 
   arrange(n) %>% 
   mutate(product_name = fct_reorder(product_name, n)) %>% 
