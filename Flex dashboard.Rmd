@@ -45,10 +45,14 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-#hour_boxplot =
-#  instacart %>% 
-#  filter(aisle == c())
-#  select(neighbourhood)
+  instacart %>% 
+  filter(product_name %in% c("Organic Hass Avocado", "Strawberries", "Carrots", "Water", "Banana", "Cheese Pizza", "Ice Cream Variety Pack", "	Chunky Peanut Butter")) %>% 
+  plot_ly(x = ~product_name, y = ~order_hour_of_day, color = ~product_name, type = "box",
+          colors = "Set2") %>% 
+layout(xaxis  = list(title = "Product Name"), 
+        yaxis = list(title = "Order Hour of the Day"), 
+         title = 'Products by Hour of the Day they are Ordered') 
+
 ```
 
 ### Chart C
