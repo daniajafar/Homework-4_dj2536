@@ -49,7 +49,7 @@ Column {data-width=350}
   filter(product_name %in% c("Organic Hass Avocado", "Strawberries", "Carrots", "Water", "Banana", "Cheese Pizza", "Ice Cream Variety Pack", "	Chunky Peanut Butter")) %>% 
   plot_ly(x = ~product_name, y = ~order_hour_of_day, color = ~product_name, type = "box",
           colors = "Set2") %>% 
-layout(xaxis  = list(title = "Product Name"), 
+layout(xaxis  = list(title = "Product Name", showticklabels = FALSE), 
         yaxis = list(title = "Order Hour of the Day"), 
          title = 'Products by Hour of the Day they are Ordered') 
 
@@ -58,7 +58,20 @@ layout(xaxis  = list(title = "Product Name"),
 ### Chart C
 
 ```{r}
+instacart %>% 
+  filter(aisle %in% c("cookies cakes", "candy chocolate", "spreads", "ice cream ice")) %>%
+  mutate(
+    aisle = as.factor(aisle)
+  ) %>% 
+  select(aisle, days_since_prior_order) %>% 
+  plot_ly(x = ~aisle,
+    y = ~days_since_prior_order,
+type = 'violin') %>% 
+layout(xaxis  = list(title = "Aisle"), 
+        yaxis = list(title = "Days Since Prior Order"), 
+         title = 'Aisle by Days Since Prior Order') 
 
+    
 ```
 
 
